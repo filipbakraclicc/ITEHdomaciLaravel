@@ -13,6 +13,7 @@ class Stanar extends Model
     protected $fillable = [
         'ime',
         'prezime',
+        'jmbg',
         'brojStana',
         'zgrada_id'
     ];

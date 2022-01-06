@@ -16,6 +16,7 @@ class Zgrada extends Model
         'brojStanova',
         'brojSpratova',
         'predsednik',
+        'email',
         'grad_id'
     ];
 

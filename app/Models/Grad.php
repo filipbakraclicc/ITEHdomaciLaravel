@@ -14,8 +14,7 @@ class Grad extends Model
         'naziv',
         'drzava',
         'region',
-        'postBroj',
-        'koordinate'
+        'postanskiBroj'
     ];
 
     public function zgrade()

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutentfController;
 use App\Http\Controllers\GradController;
 use App\Http\Controllers\ZgradaController;
 use Illuminate\Http\Request;
@@ -16,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('grad', GradController::class);
-Route::resource('zgrada', ZgradaController::class);
+Route::post('register', [AutentfController::class, 'register']);
+Route::post('login', [AutentfController::class, 'login']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::resource('grad', GradController::class);
+    Route::resource('zgrada', ZgradaController::class);
+    Route::post('logout', [AutentfController::class, 'logout']);
 });
